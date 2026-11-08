@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bitácora de misiones de exploración espacial.">
+    <title>Bitácora Espacial</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/card.css">
+    <link rel="stylesheet" href="css/components/card-list.css">
+    <link rel="stylesheet" href="css/components/controls.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Bitácora Espacial, inicio">
+        <span class="brand__icon" aria-hidden="true">✦</span>
+        <span>órbita<span class="brand__accent">/</span>bitácora</span>
+      </a>
+      <span class="header-note">REGISTRO DE EXPLORACIÓN · 2025—2030</span>
+    </header>
+
+    <main class="page">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="status-dot"></span> CENTRO DE MISIONES · SISTEMA SOLAR</p>
+        <h1 id="page-title">Cada misión<br>deja una <span>huella.</span></h1>
+        <p class="intro__copy">
+          Un registro de los destinos que estamos explorando. Revisa las misiones
+          activas o agrega una nueva tarjeta a la bitácora.
+        </p>
+      </section>
+
+      <section class="missions" aria-labelledby="missions-title">
+        <div class="missions__toolbar">
+          <div>
+            <p class="eyebrow">01 / ARCHIVO DE VUELO</p>
+            <h2 id="missions-title">Misiones <span class="count" id="mission-count">03</span></h2>
+          </div>
+          <div class="add-controls">
+            <button class="button" id="open-card-form" type="button">＋ Añadir tarjeta</button>
+          </div>
+        </div>
+
+        <div class="card-grid" aria-live="polite"></div>
+        <p class="missions__note" id="form-feedback" aria-live="polite">Las tarjetas se pueden editar o eliminar; los cambios se guardan en este navegador. Las misiones iniciales se editan en cards/Planeta.html.</p>
+      </section>
+
+      <dialog class="card-dialog" id="card-dialog" aria-labelledby="form-title">
+        <form class="card-form" id="card-form">
+          <div class="card-form__header">
+            <div>
+              <p class="eyebrow">REGISTRO DE MISIÓN</p>
+              <h2 id="form-title">Agregar misión</h2>
+            </div>
+            <button class="dialog-close" id="close-card-form" type="button" aria-label="Cerrar formulario">×</button>
+          </div>
+          <label class="form-field">
+            <span>Nombre del destino</span>
+            <input name="title" type="text" maxlength="60" placeholder="Ej. Venus" required>
+          </label>
+          <label class="form-field">
+            <span>Descripción</span>
+            <textarea name="description" rows="3" maxlength="180" placeholder="¿Qué hace especial esta misión?" required></textarea>
+          </label>
+          <div class="form-field-row">
+            <label class="form-field">
+              <span>Nombre del dato</span>
+              <input name="measure" type="text" maxlength="24" placeholder="Distancia" required>
+            </label>
+            <label class="form-field">
+              <span>Dato numérico</span>
+              <input name="value" type="number" min="0" step="any" placeholder="Ej. 108" required>
+            </label>
+          </div>
+          <label class="form-field">
+            <span>Unidad</span>
+            <input name="unit" type="text" maxlength="20" placeholder="mill. km" required>
+          </label>
+          <div class="card-form__actions">
+            <button class="button button--secondary" id="cancel-card-form" type="button">Cancelar</button>
+            <button class="button button--primary" id="save-card-button" type="submit">Guardar tarjeta</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+
+    <footer class="site-footer">
+      <span>BITÁCORA ESPACIAL</span>
+      <span>EXPLORAR · APRENDER · DESCUBRIR</span>
+    </footer>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
